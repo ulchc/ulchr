@@ -5,7 +5,7 @@
 #'
 #' NOTE: Requires remotes::install_github("ulchc/vary")
 #'
-#' @param latest A string specifying a file type.
+#' @param latest A string specifying a file type (csv or tsv).
 #' @param name_contains A string used to filter for a specific file name.
 #' @param sheetname The spreadsheet name.
 #' @param tabname The tab name.
@@ -13,6 +13,7 @@
 #' @return The input ss, as an instance of googlesheets4::sheets_id
 #'
 #' @importFrom readr read_tsv
+#' @importFrom readr read_csv
 #' @importFrom googlesheets4 gs4_create
 #' @importFrom googlesheets4 sheet_rename
 #' @export
@@ -25,15 +26,21 @@ upload_to_gsheets <- function(
     tabname = "Export"
 ) {
 
-  downloaded_tsv_files <- vary::files_matching(
+  downloaded_files <- vary::files_matching(
     path = vary::get_downloads_folder(),
     name_contains = name_contains,
     file_type = latest
   )
 
-  latest_tsv <- downloaded_tsv_files$path[1]
+  latest_file <- downloaded_files$path[1]
 
-  data <- readr::read_tsv(latest_tsv)
+  if (latest == "tsv") {
+    data <- readr::read_tsv(latest_file)
+  } else if (latest == "csv") {
+    data <- readr::read_csv(latest_file)
+  } else {
+    stop("Only tsv and csv files are compatible with this function")
+  }
 
   new_sheet <-
     googlesheets4::gs4_create(
