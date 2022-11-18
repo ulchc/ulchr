@@ -3,6 +3,8 @@
 #' Uploads the latest file in the downloads folder of the specified type. A
 #' string can be supplied to `name_contains` for a particular file.
 #'
+#' NOTE: Requires remotes::install_github("ulchc/vary")
+#'
 #' @param latest A string specifying a file type.
 #' @param name_contains A string used to filter for a specific file name.
 #' @param sheetname The spreadsheet name.
@@ -10,8 +12,6 @@
 #'
 #' @return The input ss, as an instance of googlesheets4::sheets_id
 #'
-#' @importFrom "ulchc/vary" files_matching
-#' @importFrom "ulchc/vary" get_downloads_folder
 #' @importFrom readr read_tsv
 #' @importFrom googlesheets4 gs4_create
 #' @importFrom googlesheets4 sheet_rename
