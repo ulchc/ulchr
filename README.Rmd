@@ -1,0 +1,162 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  out.width = "100%"
+)
+options(tibble.print_min = 5, tibble.print_max = 5, pillar.bold = TRUE)
+```
+
+## Overview
+A collection of all the user-defined functions I commonly use, including both the well-documented functions from my other repos and any work-in-progress functions I'm currently developing. Most of the less experimental functions included in this package can be found in
+[vary](https://github.com/ulchc/vary) 
+
+## Installation
+
+```{r, eval = FALSE}
+# install.packages("devtools")
+devtools::install_github("ulchc/ulchr")
+```
+
+## Usage
+
+After installation from GitHub, you can load it with:
+```{r, eval=TRUE}
+library(ulchr)
+```
+
+```{r, include=FALSE}
+library(tidyr)
+library(dplyr)
+
+data <- tibble(
+  ID     = "5.1.0",
+  Code   = "222",
+  Name   = "Book",
+  Day    = "Friday",
+  Month  = "APR",
+  Amount = "19.00"
+)
+
+messy_data <- tibble(
+  `Amount $`           = "20.00",
+  `Month (MMM) `       = "MAY",
+  `Day of \n the week` = "Saturday",
+  `Product\nName`      = "Notebook",
+   Barcode             = "223",
+  `ID #`               = "5.1.1"
+)
+
+color_phrases <- c(
+  "The sunrise was 'yellovv'",
+  "There were 'purp/e' flowers",
+  "The fruit was 'orang e'"
+)
+
+colors_list <- c(
+  "Red",
+  "Blue",
+  "Green",
+  "Yellow",
+  "Violet",
+  "Purple",
+  "Orange"
+)
+
+set.seed(1)
+mismatched <- tidyr::table2
+n_rows <- sample(nrow(mismatched), 5)
+mismatched[n_rows, 1] <- table2[n_rows, 3]
+mismatched[n_rows, 3] <- table2[n_rows, 1]
+```
+
+Using fuzzy_rename() when it is known that the underlying data between two sources is equivalent 
+```{r}
+# The attributes of data and messy_data are the same, but naming conventions between the sources differ
+```
+
+```{r}
+data
+messy_data
+```
+
+```{r}
+names(data) %in% names(messy_data)
+
+# No names are compatible between sources
+```
+
+```{r}
+names(data) %in% names(fuzzy_rename(messy_data, names(data)))
+
+# fuzzy_rename() will match names and print out the changes
+```
+
+Automatically match, reorder, and combine without making manual adjustments
+```{r}
+messy_data %>%
+  fuzzy_rename(data) %>%
+  select(names(data)) %>%
+  rbind(data)
+```
+
+Using fuzzy_match() to categorize and handle spelling mistakes from OCR text
+```{r}
+colors_list
+```
+```{r}
+color_phrases
+```
+
+```{r}
+colors_mentioned <- fuzzy_match(color_phrases, colors_list)
+
+# A message will indicate when there is a large string distance between fuzzy matches
+```
+```{r}
+writeLines(paste0("The colors mentioned were: ", paste0(colors_mentioned, collapse = ", ")))
+```
+
+Use which_rows() to filter data with mismatched columns
+```{r}
+# Mismatched columns: country < -- > type
+```
+```{r}
+mismatched
+```
+
+```{r}
+row_index <-
+  which_rows(
+    mismatched,
+    contain_strings = c("CASES", "2000"),
+    all_strings = TRUE,
+    case_sensitive = FALSE,
+    flatten = TRUE
+  )
+```
+
+```{r}
+# Using which_rows() to filter data prior to resolving mismatched attributes
+```
+```{r}
+mismatched[row_index, ]
+```
+
+```{r}
+# dplyr::filter is, of course, not designed to work under such conditions and would only return 2/3 of the rows 
+```
+```{r}
+mismatched %>% filter(type == "cases" & year == 2000)
+```
+
+## R Documentation
+
+Use ?vary in R to view a linked list of all functions
+
