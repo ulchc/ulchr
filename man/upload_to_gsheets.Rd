@@ -12,7 +12,7 @@ upload_to_gsheets(
 )
 }
 \arguments{
-\item{latest}{A string specifying a file type.}
+\item{latest}{A string specifying a file type (csv or tsv).}
 
 \item{name_contains}{A string used to filter for a specific file name.}
 
