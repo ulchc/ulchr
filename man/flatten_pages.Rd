@@ -9,20 +9,20 @@ flatten_pages(page_list, by = c("page", "paragraph", "line"))
 \arguments{
 \item{page_list}{A vector of characters (assumed to represent pages of text).}
 
-\item{by}{One of: `c("page", "paragraph", "line")` or a custom string to split text into rows.}
+\item{by}{One of: \code{c("page", "paragraph", "line")} or a custom string to split text into rows.}
 }
 \value{
-A tibble with columns `page`, `index`, and `value`.
+A tibble with columns \code{page}, \code{index}, and \code{value}.
 }
 \description{
 Converts a character vector into a tibble with each row representing
-a page, paragraph, or line of text. A string other than `page`, `paragraph`, or
-`line` can be supplied to the `by` argument to separate text into rows using
+a page, paragraph, or line of text. A string other than \code{page}, \code{paragraph}, or
+\code{line} can be supplied to the \code{by} argument to separate text into rows using
 that string.
 }
 \details{
-This function was written for use with [pdftools::pdf_text()] or
-[pdftools::pdf_ocr_text()], meaning that each item in the character vector is
+This function was written for use with \code{\link[pdftools:pdftools]{pdftools::pdf_text()}} or
+\code{\link[pdftools:pdf_ocr]{pdftools::pdf_ocr_text()}}, meaning that each item in the character vector is
 assumed to be a page and is labeled as such on the returned tibble. If each
 item is not representative of a page, the page column will only represent the
 index of the original character vector.

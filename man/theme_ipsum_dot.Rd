@@ -2,15 +2,15 @@
 % Please edit documentation in R/theme_ipsum_dot.R
 \name{theme_ipsum_dot}
 \alias{theme_ipsum_dot}
-\title{A `ggplot2` Theme}
+\title{A \code{ggplot2} Theme}
 \usage{
 theme_ipsum_dot()
 }
 \value{
-A modified `theme_ipsum()` from hrbrthemes
+A modified \code{theme_ipsum()} from hrbrthemes
 }
 \description{
-Returns a modified `theme_ipsum()` with a dotted grid and smaller line size.
+Returns a modified \code{theme_ipsum()} with a dotted grid and smaller line size.
 }
 \examples{
 library(ggplot2)

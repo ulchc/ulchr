@@ -20,27 +20,27 @@ read_url_zip(
 
 \item{file_name}{An optional string to specify which file to load using the file name.}
 
-\item{file_index}{An optional index number to specify which file to load when `file_name` isn't specified.}
+\item{file_index}{An optional index number to specify which file to load when \code{file_name} isn't specified.}
 
 \item{reader}{A string indicating which function to use when reading the file into R.}
 
-\item{check_name_for_type}{Boolean option to prevent detecting `file_type` from
-the last 5 characters of `file_name`. Use if the last few characters of `file_name` contain a period
+\item{check_name_for_type}{Boolean option to prevent detecting \code{file_type} from
+the last 5 characters of \code{file_name}. Use if the last few characters of \code{file_name} contain a period
 and you have not specified the file extension.}
 }
 \value{
 A tibble when the file type is a csv, tsv, xlsx, or xls, and a character vector when the file type is pdf or txt.
 }
 \description{
-Downloads the zip folder pointed to by `url`, unzips it to a temporary
+Downloads the zip folder pointed to by \code{url}, unzips it to a temporary
 location, reads the first csv into R as a tibble, then deletes the downloaded
 zip folder and the temporary files.
 }
 \details{
-`file_type`, `file_name`, and `file_index` can be changed from the defaults
+\code{file_type}, \code{file_name}, and \code{file_index} can be changed from the defaults
 to read a file that is not the first csv. If the file specified is not a "csv",
 "tsv", "xlsx", "xls", "pdf", or "txt", a function to read the file with
-must be specified using the `reader` parameter.
+must be specified using the \code{reader} parameter.
 }
 \examples{
 \dontrun{

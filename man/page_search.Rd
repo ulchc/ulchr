@@ -11,20 +11,20 @@ page_search(char_list, term, detail_level = c("page", "paragraph", "line"))
 
 \item{term}{A string to locate in the vector of characters.}
 
-\item{detail_level}{One of: `c("page", "paragraph", "line")`.}
+\item{detail_level}{One of: \code{c("page", "paragraph", "line")}.}
 }
 \value{
-A tibble with columns `query`, `page`, `detail_level`, and `value`.
+A tibble with columns \code{query}, \code{page}, \code{detail_level}, and \code{value}.
 }
 \description{
-Returns sequences of characters at the `detail_level` specified, with each row
-of the tibble containing the matching `term`. Special characters in `term`
-are interpreted as fixed strings, however, "`|`" can be used to permit either-or
+Returns sequences of characters at the \code{detail_level} specified, with each row
+of the tibble containing the matching \code{term}. Special characters in \code{term}
+are interpreted as fixed strings, however, "\code{|}" can be used to permit either-or
 searching for multiple terms.
 }
 \details{
-This function was written for use with [pdftools::pdf_text()] or
-[pdftools::pdf_ocr_text()], meaning that each item in the character vector is
+This function was written for use with \code{\link[pdftools:pdftools]{pdftools::pdf_text()}} or
+\code{\link[pdftools:pdf_ocr]{pdftools::pdf_ocr_text()}}, meaning that each item in the character vector is
 assumed to be a page and is labeled as such on the returned tibble. If each
 item is not representative of a page, the page column will only represent the
 index of the original character vector.
@@ -47,5 +47,5 @@ page_search(
 }
 }
 \seealso{
-[flatten_pages()]
+\code{\link[=flatten_pages]{flatten_pages()}}
 }

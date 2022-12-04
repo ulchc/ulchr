@@ -16,8 +16,8 @@ A data frame or tibble.
 }
 \description{
 Returns a tibble or data frame without columns containing only NA values. If
-`percent_incomplete` is supplied, any column which has a total percentage of NA
-values greater than or equal to `percent_incomplete` will be dropped.
+\code{percent_incomplete} is supplied, any column which has a total percentage of NA
+values greater than or equal to \code{percent_incomplete} will be dropped.
 }
 \examples{
 library(tidyr)
@@ -35,5 +35,5 @@ drop_na_cols(sample_data)
 drop_na_cols(sample_data, percent_incomplete = 90)
 }
 \seealso{
-[drop_na_rows()]
+\code{\link[=drop_na_rows]{drop_na_rows()}}
 }

@@ -22,15 +22,15 @@ which_rows(
 
 \item{contain_strings}{A single string or character list.}
 
-\item{all_strings}{If `TRUE`, return index where all strings present. If `FALSE`,
+\item{all_strings}{If \code{TRUE}, return index where all strings present. If \code{FALSE},
 return the index of any row with at least one matching string.}
 
-\item{case_sensitive}{If `FALSE`, pattern case is ignored. If `TRUE`, pattern case is considered.}
+\item{case_sensitive}{If \code{FALSE}, pattern case is ignored. If \code{TRUE}, pattern case is considered.}
 
-\item{lack_na}{If `TRUE`, do not return row indices which have `NA` values in any of the \code{scan_cols}.
-If `FALSE`, permit the return of indices with `NA` values.}
+\item{lack_na}{If \code{TRUE}, do not return row indices which have \code{NA} values in any of the \code{scan_cols}.
+If \code{FALSE}, permit the return of indices with \code{NA} values.}
 
-\item{flatten}{If `TRUE`, return an integer vector of each unique index. If `FALSE`,
+\item{flatten}{If \code{TRUE}, return an integer vector of each unique index. If \code{FALSE},
 return a named list of indices.}
 }
 \value{
@@ -39,11 +39,13 @@ An integer vectors or list of integer vectors.
 \description{
 For cleaning data with inconsistent formatting, but consistent identifying
 characters somewhere within each row. For use in situations like:
-* to detect the header row of an Excel sheet when it is always the first row without NA values
-* to select rows by index when it is known that a valid row contains an identifying character or
+\itemize{
+\item to detect the header row of an Excel sheet when it is always the first row without NA values
+\item to select rows by index when it is known that a valid row contains an identifying character or
 string, but the column to search isn't consistent
-* to normalize flattened data when more than one character or string must be used to
+\item to normalize flattened data when more than one character or string must be used to
 categorize a row value as a certain column attribute
+}
 }
 \details{
 Combines the row values of any number of

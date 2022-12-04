@@ -15,12 +15,12 @@ abc \%notin\% xyz
 A vector of the same length as x.
 }
 \description{
-An intuitive counterpart to `%in%` which returns a logical
+An intuitive counterpart to \code{\%in\%} which returns a logical
 vector indicating if the left operand is \emph{not in} the right operand.
 }
 \examples{
 1:10 \%notin\% c(1,3,5,9)
 }
 \seealso{
-[base::match()] [base::Negate()]
+\code{\link[base:match]{base::match()}} \code{\link[base:funprog]{base::Negate()}}
 }

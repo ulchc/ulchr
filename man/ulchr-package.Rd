@@ -11,39 +11,67 @@ A collection of all the user-defined functions I commonly use, including both th
 \seealso{
 Structure Data
 
-* [which_rows()]
+\itemize{
+\item \code{\link[=which_rows]{which_rows()}}
+}
 
-* [fuzzy_match()]
+\itemize{
+\item \code{\link[=fuzzy_match]{fuzzy_match()}}
+}
 
-* [fuzzy_rename()]
+\itemize{
+\item \code{\link[=fuzzy_rename]{fuzzy_rename()}}
+}
 
-* [flatten_pages()]
+\itemize{
+\item \code{\link[=flatten_pages]{flatten_pages()}}
+}
 
-* [page_search()]
+\itemize{
+\item \code{\link[=page_search]{page_search()}}
+}
 
-* [drop_na_rows()]
+\itemize{
+\item \code{\link[=drop_na_rows]{drop_na_rows()}}
+}
 
-* [drop_na_cols()]
+\itemize{
+\item \code{\link[=drop_na_cols]{drop_na_cols()}}
+}
 
 Locate Files / Load Data
 
-* [get_downloads_folder()]
+\itemize{
+\item \code{\link[=get_downloads_folder]{get_downloads_folder()}}
+}
 
-* [get_desktop_folder()]
+\itemize{
+\item \code{\link[=get_desktop_folder]{get_desktop_folder()}}
+}
 
-* [files_matching()]
+\itemize{
+\item \code{\link[=files_matching]{files_matching()}}
+}
 
-* [read_url_zip()]
+\itemize{
+\item \code{\link[=read_url_zip]{read_url_zip()}}
+}
 
-* [upload_to_gsheets()]
+\itemize{
+\item \code{\link[=upload_to_gsheets]{upload_to_gsheets()}}
+}
 
 Styling
 
-* [theme_ipsum_dot()]
+\itemize{
+\item \code{\link[=theme_ipsum_dot]{theme_ipsum_dot()}}
+}
 
 Other
 
-* [`%notin%`]
+\itemize{
+\item \code{\link{\%notin\%}}
+}
 }
 \author{
 \strong{Maintainer}: Chris Ulch \email{ulchchrisj@gmail.com}

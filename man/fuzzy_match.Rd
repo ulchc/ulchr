@@ -9,26 +9,26 @@ fuzzy_match(swap_out, swap_in)
 \arguments{
 \item{swap_out}{A vector of characters.}
 
-\item{swap_in}{A vector of characters >= `length(swap_out)`.}
+\item{swap_in}{A vector of characters >= \code{length(swap_out)}.}
 }
 \value{
-A character vector equal in length to `swap_out`.
+A character vector equal in length to \code{swap_out}.
 }
 \description{
-Substitutes all elements of `swap_out` with one from `swap_in`. All
+Substitutes all elements of \code{swap_out} with one from \code{swap_in}. All
 perfect matches are immediately substituted, with proceeding matches
 assigned based on the smallest string distance computed across the remainder
-of `swap_out` and `swap_in`.
+of \code{swap_out} and \code{swap_in}.
 }
 \details{
-When two or more matches have equivalent total string distances, the `swap_in`
-term with the maximum variance across all remaining `swap_out` terms will proceed.
+When two or more matches have equivalent total string distances, the \code{swap_in}
+term with the maximum variance across all remaining \code{swap_out} terms will proceed.
 In doing so, the most distinct term is removed from the set of potential matches
 so as to leave the terms with the most overlap to the end of the matching sequence.
 
-Implements the running cosine matching algorithm from [stringdist::afind()]
-with a preference for `q = 3`, but constrained to the minimum number of characters
-of any string in `swap_out` or `swap_out`.
+Implements the running cosine matching algorithm from \code{\link[stringdist:afind]{stringdist::afind()}}
+with a preference for \code{q = 3}, but constrained to the minimum number of characters
+of any string in \code{swap_out} or \code{swap_out}.
 }
 \examples{
 messy_words <- c(

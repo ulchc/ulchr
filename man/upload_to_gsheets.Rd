@@ -25,7 +25,7 @@ The input ss, as an instance of googlesheets4::sheets_id
 }
 \description{
 Uploads the latest file in the downloads folder of the specified type. A
-string can be supplied to `name_contains` for a particular file.
+string can be supplied to \code{name_contains} for a particular file.
 }
 \examples{
 upload_to_gsheets(latest = "tsv")
