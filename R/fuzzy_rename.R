@@ -1,11 +1,11 @@
 #' Rename columns with fuzzy matching
 #'
 #' Changes the names of all variables in `data` to the closest matches in
-#' `match_with` using [vary::fuzzy_match()].
+#' `match_with` using [fuzzy_match()].
 #'
 #' @param data A data frame or tibble.
 #' @param match_with A data frame, tibble, or vector of characters.
-#' @seealso [vary::fuzzy_match()]
+#' @seealso [fuzzy_match()]
 #' @return A renamed data frame or tibble.
 #'
 #' @import dplyr

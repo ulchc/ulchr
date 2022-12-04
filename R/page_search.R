@@ -20,7 +20,7 @@
 #' @importFrom stringr str_detect
 #' @importFrom stringr str_extract
 #' @importFrom stringr str_replace_all
-#' @seealso [vary::flatten_pages()]
+#' @seealso [flatten_pages()]
 #' @export
 #' @examples
 #' \dontrun{

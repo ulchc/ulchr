@@ -47,5 +47,5 @@ page_search(
 }
 }
 \seealso{
-[vary::flatten_pages()]
+[flatten_pages()]
 }

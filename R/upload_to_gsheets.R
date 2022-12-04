@@ -3,8 +3,6 @@
 #' Uploads the latest file in the downloads folder of the specified type. A
 #' string can be supplied to `name_contains` for a particular file.
 #'
-#' NOTE: Requires remotes::install_github("ulchc/vary")
-#'
 #' @param latest A string specifying a file type (csv or tsv).
 #' @param name_contains A string used to filter for a specific file name.
 #' @param sheetname The spreadsheet name.

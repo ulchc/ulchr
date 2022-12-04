@@ -35,7 +35,13 @@ Locate Files / Load Data
 
 * [read_url_zip()]
 
-Other _(possible future relocation)_
+* [upload_to_gsheets()]
+
+Styling
+
+* [theme_ipsum_dot()]
+
+Other
 
 * [`%notin%`]
 }

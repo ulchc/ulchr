@@ -16,7 +16,7 @@ A renamed data frame or tibble.
 }
 \description{
 Changes the names of all variables in `data` to the closest matches in
-`match_with` using [vary::fuzzy_match()].
+`match_with` using [fuzzy_match()].
 }
 \examples{
 
@@ -56,5 +56,5 @@ messy_data \%>\%
   rbind(data)
 }
 \seealso{
-[vary::fuzzy_match()]
+[fuzzy_match()]
 }

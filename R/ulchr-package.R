@@ -11,7 +11,10 @@
 #' @seealso * [get_desktop_folder()]
 #' @seealso * [files_matching()]
 #' @seealso * [read_url_zip()]
-#' @seealso Other _(possible future relocation)_
+#' @seealso * [upload_to_gsheets()]
+#' @seealso Styling
+#' @seealso * [theme_ipsum_dot()]
+#' @seealso Other
 #' @seealso * [`%notin%`]
 #' @keywords internal
 "_PACKAGE"
