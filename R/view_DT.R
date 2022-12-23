@@ -6,7 +6,7 @@
 #' @return A DT::datatable of length nrow(df) - 1.
 #' @export
 #' @seealso [DT::datatable()]
-view_DT <- function(df, randomize_index = FALSE, line_height = '50%', max_cells = 10000, verbose = FALSE) {
+view_DT <- function(df, randomize_index = FALSE, line_height = '50%', max_cells = 500, verbose = FALSE) {
 
   index <- 1:nrow(df)
 
@@ -31,7 +31,7 @@ view_DT <- function(df, randomize_index = FALSE, line_height = '50%', max_cells 
     extensions = "Buttons",
     options = list(
       pageLength = nrow(df) - 1,
-      dom = "B",
+      dom = "Btip",
       buttons = c("excel")
     )
   )
