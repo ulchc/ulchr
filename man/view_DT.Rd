@@ -8,7 +8,7 @@ view_DT(
   df,
   randomize_index = FALSE,
   line_height = "50\%",
-  max_cells = 10000,
+  max_cells = 500,
   verbose = FALSE
 )
 }
