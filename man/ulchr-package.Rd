@@ -39,6 +39,10 @@ Structure Data
 \item \code{\link[=drop_na_cols]{drop_na_cols()}}
 }
 
+\itemize{
+\item \code{\link[=cbind_ignore_row]{cbind_ignore_row()}}
+}
+
 Locate Files / Load Data
 
 \itemize{
@@ -71,6 +75,10 @@ Other
 
 \itemize{
 \item \code{\link{\%notin\%}}
+}
+
+\itemize{
+\item \code{\link[=view_DT]{view_DT()}}
 }
 }
 \author{
