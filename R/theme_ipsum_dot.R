@@ -16,18 +16,20 @@
 #'   geom_bar() +
 #'   theme_ipsum_dot()
 theme_ipsum_dot <- function() {
-  ggplot2::`%+replace%`(
-    hrbrthemes::theme_ipsum(),
-    ggplot2::theme(
-      panel.grid.major = ggplot2::element_line(
-        linetype = "dotted",
-        colour = "#454545",
-        size = 0.3),
-      panel.grid.minor = ggplot2::element_line(
-        linetype = "dotted",
-        colour = "#454545",
-        size = 0.3),
-      axis.line = ggplot2::element_line(color = "#454545", size = 0.3)
+  suppressWarnings({
+    ggplot2::`%+replace%`(
+      hrbrthemes::theme_ipsum(),
+      ggplot2::theme(
+        panel.grid.major = ggplot2::element_line(
+          linetype = "dotted",
+          colour = "#454545",
+          size = 0.3),
+        panel.grid.minor = ggplot2::element_line(
+          linetype = "dotted",
+          colour = "#454545",
+          size = 0.3),
+        axis.line = ggplot2::element_line(color = "#454545", size = 0.3)
+      )
     )
-  )
+  })
 }
